@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casagrand Tudor Buyers Entitlement League [CATBEL]</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+
+<div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">CATBEL</h2>
+        <ul class="menu">
+            <li class="active">Dashboard</li>
+            <li>Buyers</li>
+            <li>Analytics</li>
+            <li>Transactions</li>
+            <li>Cashflow</li>
+            <li>Members</li>
+            <li>Messages</li>
+            <li>Help Center</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Header -->
+        <header class="topbar">
+            <h1>Dashboard Overview</h1>
+            <button class="btn">Add Member</button>
+        </header>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="card">
+                <h3>4860</h3>
+                <p>Eligible Buyers</p>
+            </div>
+            <div class="card">
+                <h3>₹2B</h3>
+                <p>Total Entitlement Value</p>
+            </div>
+            <div class="card">
+                <h3>1037</h3>
+                <p>Confirmed Members</p>
+            </div>
+            <div class="card">
+                <h3>895</h3>
+                <p>New Registrations</p>
+            </div>
+        </section>
+
+        <!-- Charts -->
+        <section class="charts">
+            <div class="chart-card">
+                <h3>Status Analysis</h3>
+                <canvas id="statusChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Monthly Entitlement Distribution</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Properties -->
+        <section class="properties">
+            <h2>Eligible Property Categories</h2>
+            <div class="property-grid">
+                <div class="property">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
+                    <h4>Luxury Villas</h4>
+                    <p>₹75,48,000</p>
+                </div>
+                <div class="property">
+                    <img src="https://images.unsplash.com/photo-1600585154207-40b8f62c7a0b" />
+                    <h4>Premium Apartments</h4>
+                    <p>₹15,48,000</p>
+                </div>
+                <div class="property">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" />
+                    <h4>Hill View Homes</h4>
+                    <p>₹20,48,000</p>
+                </div>
+                <div class="property">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" />
+                    <h4>Beachside Villas</h4>
+                    <p>₹69,48,000</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
