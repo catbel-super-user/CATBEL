@@ -6,20 +6,14 @@ on:
       - main
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -28,26 +22,15 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: lf-design-04-vue
         run: npm install
-        working-directory: lf-design-04-vue
 
-      - name: Build
+      - name: Build Vue app
+        working-directory: lf-design-04-vue
         run: npm run build
-        working-directory: lf-design-04-vue
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: lf-design-04-vue/dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: lf-design-04-vue/dist
