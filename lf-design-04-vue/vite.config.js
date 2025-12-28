@@ -19,5 +19,5 @@ import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [vue()],
-  base: "/CATBEL/", // 👈 EXACT repo name
+  base: "/CATBEL/lf-design-04-vue/", // 👈 EXACT repo name
 });
