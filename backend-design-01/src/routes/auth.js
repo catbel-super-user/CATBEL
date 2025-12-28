@@ -5,6 +5,21 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
+router.post("/seed-admin", async (req, res) => {
+    const exists = await User.findOne({ email: "admin@catbel.com" });
+    if (exists) return res.json({ message: "Admin already exists" });
+  
+    const hashed = await bcrypt.hash("123456", 10);
+  
+    await User.create({
+      email: "admin@catbel.com",
+      password: hashed,
+      role: "ADMIN"
+    });
+  
+    res.json({ message: "Admin created" });
+  });
+  
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
