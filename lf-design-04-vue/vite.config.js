@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+/*import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
@@ -12,4 +12,12 @@ export default defineConfig({
       "@": "/src"
     }
   }
+});*/
+
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
+export default defineConfig({
+  plugins: [vue()],
+  base: "/CATBEL/", // 👈 EXACT repo name
 });
